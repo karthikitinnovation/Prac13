@@ -1,5 +1,7 @@
 package pom;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -7,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
+
+import utility.Screenshot;
 
 public class Login_page 
 {
@@ -22,7 +26,7 @@ public class Login_page
 	@FindBy (how = How.ID, using = "password")
 	@CacheLookup WebElement pword;
 	
-	public void login_pagetest(String un, String pw)
+	public void login_pagetest(String un, String pw) throws IOException
 	{
 		SoftAssert sa = new SoftAssert();
 		
@@ -36,6 +40,9 @@ public class Login_page
 		Reporter.log("username selected", true);
 		
 		uname.sendKeys(un);
+		Screenshot.capturescreenshot(driver, "username entered");
+		
 		pword.sendKeys(pw);
+		Screenshot.capturescreenshot(driver, "password entered");
 	}
 }
