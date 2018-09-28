@@ -29,10 +29,10 @@ public class Login_page
 		sa.assertTrue(uname.isDisplayed(), "username NOT displayed");
 		Reporter.log("user name displayed", true);
 		
-		sa.assertTrue(uname.isEnabled(), "un is enabled");
+		sa.assertTrue(uname.isEnabled(), "un is NOT enabled");
 		Reporter.log("username selected", true);
 		
-		sa.assertTrue(uname.isSelected(), "un is selected");
+		sa.assertTrue(uname.isSelected(), "un is NOT selected");
 		Reporter.log("username selected", true);
 		
 		uname.sendKeys(un);
