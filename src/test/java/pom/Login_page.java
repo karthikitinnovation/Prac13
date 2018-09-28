@@ -24,7 +24,7 @@ public class Login_page
 	@CacheLookup WebElement uname;
 	
 	@FindBy (how = How.ID, using = "password")
-	@CacheLookup WebElement pword;
+	@CacheLookup WebElement pword;// for fast process. takes value from cache.
 	
 	public void login_pagetest(String un, String pw) throws IOException
 	{
